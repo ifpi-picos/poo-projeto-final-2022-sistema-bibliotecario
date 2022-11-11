@@ -1,3 +1,4 @@
+package com.example;
 import java.util.Date;
 
 public class Livro {
@@ -22,36 +23,47 @@ public class Livro {
     public int getCod() {
         return cod;
     }
+
     public void setCod(int cod) {
         this.cod = cod;
     }
+
     public String getTitulo() {
         return titulo;
     }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
     public String getAutor() {
         return autor;
     }
+
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
     public String getAreDeConhecimento() {
         return areDeConhecimento;
     }
+
     public void setAreDeConhecimento(String areDeConhecimento) {
         this.areDeConhecimento = areDeConhecimento;
     }
+
     public Date getDataDePubicacao() {
         return dataDePubicacao;
     }
+
     public void setDataDePubicacao(Date dataDePubicacao) {
         this.dataDePubicacao = dataDePubicacao;
     }
+
     public int getQuantidadeDeCopias() {
         return quantidadeDeCopias;
     }
+    
     public void setQuantidadeDeCopias(int quantidadeDeCopias) {
         this.quantidadeDeCopias = quantidadeDeCopias;
     }

@@ -1,13 +1,16 @@
 package com.example;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main( String[] args ){
+        
+        int parada = 0;
+        Menu janelas = new Menu();
+        
+        while(parada != 2){
+            parada = janelas.exibeMenuPrinciapal();
+
+
+        }
+        
     }
 }
