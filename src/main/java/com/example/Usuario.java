@@ -1,5 +1,6 @@
 package com.example;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class Usuario {
     
@@ -64,5 +65,19 @@ public class Usuario {
         this.emprestimo = emprestimo;
     }
 
+    public void fazerEmprestimo(Emprestimo emprestimo){
+        if(this.emprestimo == null){
+            if(emprestimo.getLivro().getQuantidadeDeCopias()!=0){
+                this.emprestimo = emprestimo;
+                JOptionPane.showConfirmDialog(null, "Emprestimo confirmado !", "Solicitação de Emprestimo", 2);
+            }
+            else{
+                JOptionPane.showConfirmDialog(null, "Infelizmente não temos mais copias desse livro !", "Solicitação de Emprestimo", 0);    
+            }    
+        }
+        else{
+            JOptionPane.showConfirmDialog(null, "Você já possui um emprestimo ativo !", "Solicitação de Emprestimo", 0);
+        }
+    }
 
 }
