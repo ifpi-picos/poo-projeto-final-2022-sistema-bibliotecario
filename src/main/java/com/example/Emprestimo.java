@@ -7,7 +7,25 @@ public class Emprestimo {
     private Livro livro;
     private Usuario usuario;
 
-    public listarEmprestimo(Usuario usuario,Livro livro){
-         
+
+    public Emprestimo(Date dataDeemprestimo, Livro livro, Usuario usuario) {
+        this.dataDeemprestimo = dataDeemprestimo;
+        this.livro = livro;
+        this.usuario = usuario;
     }
+
+    public Date getDataDeemprestimo() {
+        return dataDeemprestimo;
+    }
+
+    public Livro getLivro() {
+        return livro;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    
+
 }

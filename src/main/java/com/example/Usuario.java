@@ -7,21 +7,22 @@ public class Usuario {
     private String email; 
     private Date dataDeNacimento; 
     private Endereco endereco;
-    private int quantidadeDeEmprestimo;
+    private Emprestimo emprestimo;
 
-    public Usuario(String nome, String email, Date dataDeNacimento, Endereco endereco, int quantidadeDeEmprestimo) {
+    public Usuario(String nome, String email, Date dataDeNacimento, Endereco endereco, Emprestimo quantidadeDeEmprestimo) {
         this.nome = nome;
         this.email = email;
         this.dataDeNacimento = dataDeNacimento;
         this.endereco = endereco;
-        this.quantidadeDeEmprestimo = quantidadeDeEmprestimo;
+        this.emprestimo = quantidadeDeEmprestimo;
     }
 
-    //public pegar(String livro){
-    //}
+    public void pegar(Emprestimo emprestimo){
+        this.emprestimo = emprestimo;
+    }
 
     public void devolver(){
-
+     this.emprestimo = null;   
     }
     public String getNome() {
         return nome;
@@ -55,12 +56,13 @@ public class Usuario {
         this.endereco = endereco;
     }
 
-    public int getQuantidadeDeEmprestimo() {
-        return quantidadeDeEmprestimo;
+    public Emprestimo getemprestimo() {
+        return emprestimo;
     }
 
-    public void setQuantidadeDeEmprestimo(int quantidadeDeEmprestimo) {
-        this.quantidadeDeEmprestimo = quantidadeDeEmprestimo;
+    public void setemprestimo(Emprestimo emprestimo) {
+        this.emprestimo = emprestimo;
     }
+
 
 }

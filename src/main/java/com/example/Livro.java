@@ -1,5 +1,7 @@
 package com.example;
 import java.util.Date;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Livro {
     
@@ -68,6 +70,37 @@ public class Livro {
         this.quantidadeDeCopias = quantidadeDeCopias;
     }
 
+    public void  cadastrarlivros(int cod, String titulo, String autor,String areDeConhecimento,Date dataDePubicacao,int quantidadeDeCopias,List<Livro> livros){
+        for(int i = 0;i<livros.size();i++){
+            if(livros.get(i).getCod()==cod){
+                JOptionPane.showMessageDialog(null, "Esse livro já foi cadastrado no sistema !");                
+            }
+            else{
+                Livro livro = new Livro(cod, titulo, autor, areDeConhecimento, dataDePubicacao, quantidadeDeCopias);
+                livros.add(livro); 
+            }
+        }
+    }
+    public void alterarLivro(int cod, String titulo, String autor,String areDeConhecimento,Date dataDePubicacao,int quantidadeDeCopias, List<Livro> livros){
+        for (int i = 0; i<livros.size();i++){
+            if(livros.get(i).getCod()==cod){
+                livros.remove(i);
+                cadastrarlivros(cod, titulo, autor, areDeConhecimento, dataDePubicacao, cod, livros);                               
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Não existe esse livro no nosso sistema !"); 
+            }
+        }
+    }    
 
-    
+    public void removerLivro(List<Livro>livros){
+        for (int i = 0; i<livros.size();i++){
+            if(livros.get(i).getCod()==cod){
+                livros.remove(i);                               
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Não existe esse livro no nosso sistema !"); 
+            }
+        }
+    }
 }
