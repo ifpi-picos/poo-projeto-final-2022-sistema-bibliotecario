@@ -2,11 +2,9 @@ package com.example;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
 import javax.swing.JOptionPane;
+
 
 public class App {
     
@@ -25,26 +23,9 @@ private static Usuario getUsuario() throws ParseException{
     return usuario1;
 
     }
-    public static void main( String[] args ) throws ParseException{
-    
-        List<Usuario> usuarios = new ArrayList<>();
-        int parada = 0;
-        Menu janelas = new Menu();
-        
-        while(parada != 2){
-            parada = janelas.exibeMenuPrinciapal();
-            if (parada==0){
-                usuarios.add(getUsuario());
-            }
-            else if (parada==1){
-                
-            }
-            else{
-                parada=2;
-            }
+    public static void main( String[] args ){
+        Conexao c = new Conexao();
+        c.inicioConexao();
 
-        }
-        
     }
-}
-
+}   

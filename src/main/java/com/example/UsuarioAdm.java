@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class UsuarioAdm  extends Usuario{
     
-
+    
     public UsuarioAdm(String nome, String email, Date dataDeNacimento, Endereco endereco, Emprestimo quantidadeDeEmprestimo) {
         super(nome, email, dataDeNacimento, endereco, quantidadeDeEmprestimo);
     }

@@ -1,20 +1,24 @@
 package com.example;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
 public class Teste {    
     public static void main( String[] args ){
-        List<Usuario>usuarios = new ArrayList<>();
-        Usuario usuario1 = new Usuario("samuel", null, null, null, null);
-        Usuario usuario2 = new Usuario("sofia", null, null, null, null);
-        usuarios.add(usuario2);
-        usuarios.add(usuario1);
-        String nomes= ""; 
-        for(int i = 0 ;i<usuarios.size();i++){
-            nomes =usuarios.get(i).getNome()+" ,"+nomes;
-        }
-        JOptionPane.showMessageDialog(null, nomes, "Usuários Cadastrados", 1);
+        
+        List<Livro> livros = new ArrayList<>();
+        Usuario usuario = new Usuario("samuel", null, null, null, null);
+        
+        Livro livro = new Livro(0, "Amor para Amar", "Samuel", "romance", null, 2);
+        livros.add(livro);
+
+        Emprestimo emprestimo = new Emprestimo(null, livro, usuario);
+        System.out.println(livros.size());
+        usuario.fazerEmprestimo(emprestimo);
+
+        System.out.println(usuario.getemprestimo().getLivro().getTitulo());
+        
+        usuario.getemprestimo().getLivro().removerLivro(livros);
+        System.out.println(livros.size());
     }
 }
